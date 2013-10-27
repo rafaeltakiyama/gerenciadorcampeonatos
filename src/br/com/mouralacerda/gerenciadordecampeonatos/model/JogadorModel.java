@@ -7,7 +7,7 @@ public class JogadorModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int codJogador;
-	private String nomeJOgador;
+	private String nomeJogador;
 
 	public int getCodJogador() {
 		return codJogador;
@@ -17,12 +17,12 @@ public class JogadorModel implements Serializable {
 		this.codJogador = codJogador;
 	}
 
-	public String getNomeJOgador() {
-		return nomeJOgador;
+	public String getNomeJogador() {
+		return nomeJogador;
 	}
 
-	public void setNomeJOgador(String nomeJOgador) {
-		this.nomeJOgador = nomeJOgador;
+	public void setNomeJogador(String nomeJOgador) {
+		this.nomeJogador = nomeJOgador;
 	}
 
 }

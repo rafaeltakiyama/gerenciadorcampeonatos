@@ -14,7 +14,7 @@ public class EstadioController {
 
 		List<EstadioModel> estadioList = new ArrayList<EstadioModel>();
 		
-		DaoFactory.init(context);
+		//DaoFactory.init(context);
 		BancoHelper.instance().open(context);
 		estadioList = DaoFactory.get(EstadioModel.class).selectAll();
 		BancoHelper.instance().close();

@@ -1,12 +1,14 @@
 package br.com.mouralacerda.gerenciadordecampeonatos;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import br.com.mouralacerda.gerenciadordecampeonatos.dao.DaoFactory;
 
 import com.example.gerenciadordecampeonatos.R;
 
@@ -14,14 +16,19 @@ public class AtividadePrincipal extends ListActivity {
 
 	private static final String[] nomes = new String[] { "Campeonatos",
 		"Estádios",
+		"Jogadores",
 		"Sair" };
-	
+	private Context context;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//setContentView(R.layout.layout_atividade_principal);
 
+		context = this;
+		
+		DaoFactory.init(context);
+		
 		this.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomes));
 
 	}
@@ -41,6 +48,10 @@ public class AtividadePrincipal extends ListActivity {
 			
 		case 1:
 			startActivity(new Intent(this, AtividadeListaEstadios.class));
+			break;
+			
+		case 2:
+			startActivity(new Intent(this, AtividadeListaJogador.class));
 			break;
 			
 		default:

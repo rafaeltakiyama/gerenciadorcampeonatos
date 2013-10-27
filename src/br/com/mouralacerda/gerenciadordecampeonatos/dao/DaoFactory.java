@@ -5,6 +5,7 @@ import java.util.Map;
 
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.EstadioModel;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorModel;
 
 import android.content.Context;
 
@@ -17,6 +18,7 @@ public class DaoFactory {
 		
 		daos.put(CampeonatoModel.class, new CampeonatoDao(context));
 		daos.put(EstadioModel.class, new EstadioDao(context));
+		daos.put(JogadorModel.class, new JogadorDao(context));
 		
 	}
 	

@@ -9,3 +9,9 @@ CREATE TABLE IF NOT EXISTS tbestadio(
 	nomeEstadio TEXT
 	);
 CREATE INDEX idx_tbestadio on tbestadio(codEstadio);
+
+CREATE TABLE IF NOT EXISTS tbjogador(
+	codJogador integer primary key autoincrement,
+	nomeJogador TEXT
+	);
+CREATE INDEX idx_tbjogador on tbjogador(codJogador);
