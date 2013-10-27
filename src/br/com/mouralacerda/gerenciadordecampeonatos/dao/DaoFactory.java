@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.EstadioModel;
 
 import android.content.Context;
 
@@ -15,6 +16,7 @@ public class DaoFactory {
 		daos = new HashMap<Class<?>, Dao<?>>();
 		
 		daos.put(CampeonatoModel.class, new CampeonatoDao(context));
+		daos.put(EstadioModel.class, new EstadioDao(context));
 		
 	}
 	

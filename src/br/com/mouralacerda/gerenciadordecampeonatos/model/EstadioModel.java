@@ -24,5 +24,10 @@ public class EstadioModel implements Serializable {
 	public void setNomeEstadio(String nomeEstadio) {
 		this.nomeEstadio = nomeEstadio;
 	}
+	
+	@Override
+	public String toString() {
+		return "Estádio: " + getNomeEstadio();
+	}
 
 }

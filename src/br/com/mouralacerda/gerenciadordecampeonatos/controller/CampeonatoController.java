@@ -15,7 +15,6 @@ public class CampeonatoController {
 		List<CampeonatoModel> campenatoList = new ArrayList<CampeonatoModel>();
 		
 		DaoFactory.init(context);
-		
 		BancoHelper.instance().open(context);
 		campenatoList = DaoFactory.get(CampeonatoModel.class).selectAll();
 		BancoHelper.instance().close();

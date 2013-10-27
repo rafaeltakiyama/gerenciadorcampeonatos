@@ -45,6 +45,7 @@ public class CampeonatoDao extends Dao<CampeonatoModel>{
 
 		ContentValues values = new ContentValues();
 
+		values.put("codCampeonato", element.getCodCampeonato());
 		values.put("nomeCampeonato", element.getNomeCampeonato());
 		
 		return values;

@@ -1,43 +1,29 @@
 package br.com.mouralacerda.gerenciadordecampeonatos;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.app.Activity;
-import android.content.Context;
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import br.com.mouralacerda.gerenciadordecampeonatos.controller.CampeonatoController;
-import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
 
 import com.example.gerenciadordecampeonatos.R;
 
-public class AtividadePrincipal extends Activity {
+public class AtividadePrincipal extends ListActivity {
 
-	private Context context;
-
+	private static final String[] nomes = new String[] { "Campeonatos",
+		"Estádios",
+		"Sair" };
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.layout_atividade_principal);
+		//setContentView(R.layout.layout_atividade_principal);
 
-		context = this;
+		this.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomes));
 
-		ListView listViewCampeonatos = (ListView) findViewById(R.id.listView1);
-
-		List<CampeonatoModel> listCampeonatos = new ArrayList<CampeonatoModel>();
-
-		listCampeonatos = CampeonatoController.getCampenatos(context);
-		
-
-		ArrayAdapter<CampeonatoModel> adapter = new ArrayAdapter<CampeonatoModel>(context,
-				android.R.layout.simple_list_item_1, android.R.id.text1,
-				listCampeonatos);
-		
-		listViewCampeonatos.setAdapter(adapter)
-;
 	}
 
 	@Override
@@ -45,5 +31,22 @@ public class AtividadePrincipal extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		switch (position) {
+		case 0:
+			startActivity(new Intent(this, AtividadeListaCampeonatos.class));
+			break;
+			
+		case 1:
+			startActivity(new Intent(this, AtividadeListaEstadios.class));
+			break;
+			
+		default:
+			finish();
+		}
+	}
+
 
 }
