@@ -34,7 +34,7 @@ public class CampeonatoModel implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Campeonato: " + getNomeCampeonato(); 
+		return "Campeonato: \n" + getNomeCampeonato(); 
 	}
 	
 }

@@ -17,6 +17,7 @@ public class AtividadePrincipal extends ListActivity {
 	private static final String[] nomes = new String[] { "Campeonatos",
 		"Estádios",
 		"Jogadores",
+		"Juizes",
 		"Sair" };
 	private Context context;
 	
@@ -54,6 +55,9 @@ public class AtividadePrincipal extends ListActivity {
 			startActivity(new Intent(this, AtividadeListaJogador.class));
 			break;
 			
+		case 3:
+			startActivity(new Intent(this, AtividadeListaJuiz.class));
+			break;
 		default:
 			finish();
 		}

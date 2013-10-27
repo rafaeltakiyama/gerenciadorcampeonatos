@@ -25,4 +25,9 @@ public class JogadorModel implements Serializable {
 		this.nomeJogador = nomeJOgador;
 	}
 
+	@Override
+	public String toString() {
+		return "Nome jogador: \n" + getNomeJogador();
+	}
+	
 }

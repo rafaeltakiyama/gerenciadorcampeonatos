@@ -14,7 +14,6 @@ public class JogadorController {
 		
 		List<JogadorModel> jogadorList = new ArrayList<JogadorModel>();
 		
-		//DaoFactory.init(context);
 		BancoHelper.instance().open(context);
 		jogadorList = DaoFactory.get(JogadorModel.class).selectAll();
 		BancoHelper.instance().close();

@@ -24,5 +24,10 @@ public class JuizModel implements Serializable {
 	public void setNomeJuiz(String nomeJuiz) {
 		this.nomeJuiz = nomeJuiz;
 	}
+	
+	@Override
+	public String toString() {
+		return "Nome: \n"+ getNomeJuiz();
+	}
 
 }
