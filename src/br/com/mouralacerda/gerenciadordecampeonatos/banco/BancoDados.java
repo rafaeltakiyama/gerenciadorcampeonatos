@@ -12,7 +12,7 @@ import android.util.Log;
 class BancoDados extends SQLiteOpenHelper{ //nao é publica... so quem esta no mesmo pacote enxerga- (BancoHelper) 
 	
 	//so vamos trabalhar com um Banco
-	public static final String BANCO_NOME = "portaldoaluno";
+	public static final String BANCO_NOME = "gerenciadorcampeonatos";
 	
 
 	public BancoDados(Context context, int version) {

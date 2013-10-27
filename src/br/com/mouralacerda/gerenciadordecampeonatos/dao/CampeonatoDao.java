@@ -13,12 +13,12 @@ public class CampeonatoDao extends Dao<CampeonatoModel>{
 
 	@Override
 	protected String nomeTabela() {
-		return "tbcampenato";
+		return "tbcampeonato";
 	}
 
 	@Override
 	protected String whereClause(CampeonatoModel element) {
-		return "codCampenato = ?";
+		return "codCampeonato = ?";
 	}
 
 	@Override

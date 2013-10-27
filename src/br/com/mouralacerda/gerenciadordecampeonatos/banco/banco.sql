@@ -1,5 +1,5 @@
-CREATE TABLE IF NOT EXISTS tbcampenato(
+CREATE TABLE IF NOT EXISTS tbcampeonato(
 	codCampeonato integer primary key autoincrement,
-	nomeCampenato TEXT ,
+	nomeCampeonato TEXT
 	);
-CREATE INDEX idx_tbcampenato on tbcampenato(codCampeonato);
+CREATE INDEX idx_tbcampeonato on tbcampeonato(codCampeonato);

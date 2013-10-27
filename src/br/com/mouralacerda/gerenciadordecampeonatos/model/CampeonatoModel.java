@@ -32,4 +32,9 @@ public class CampeonatoModel implements Serializable {
 		this.nomeCampeonato = nomeCampeonato;
 	}
 
+	@Override
+	public String toString() {
+		return "Campeonato: " + getNomeCampeonato(); 
+	}
+	
 }

@@ -28,6 +28,7 @@ public abstract class Dao<T> {
 
 	protected abstract boolean igual(T elementoLocal, T elementoWs);
 
+	@SuppressWarnings("unused")
 	private SQLiteDatabase db;
 
 	public Boolean addListObj(List<T> element) {
@@ -98,10 +99,7 @@ public abstract class Dao<T> {
 					values, SQLiteDatabase.CONFLICT_REPLACE);
 			configure(element, insert);
 			//Log.i(element.getClass().getSimpleName(), "Inserindo...");
-		} else {
-			
 		}
-
 	}
 
 	public void update(T element) {
