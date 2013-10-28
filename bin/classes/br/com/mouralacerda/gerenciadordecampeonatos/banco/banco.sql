@@ -27,3 +27,35 @@ CREATE TABLE IF NOT EXISTS tbtime(
 	nomeTime TEXT
 	);
 CREATE INDEX idx_tbtime on tbtime(codTime);
+
+CREATE TABLE IF NOT EXISTS tbrodada(
+	codRodada integer primary key autoincrement,
+	codCampeonatoRodada integer,
+	FOREIGN KEY(codCampeonatoRodada) REFERENCES tbcampeonato(codCampeonato)
+	);
+CREATE INDEX idx_tbrodada on tbrodada(codRodada);
+
+CREATE TABLE IF NOT EXISTS tbpartida(
+	codPartida integer primary key autoincrement,
+	codRodadaPartida integer,
+	codCampeonatoPartida integer,
+  codJuizPartida integer,  
+  codEstadioPartida integer,  
+  codTimePartida integer,
+	FOREIGN KEY(codRodadaPartida) REFERENCES [tbrodada]([codRodada])
+	FOREIGN KEY(codCampeonatoPartida) REFERENCES [tbcampeonato]([codCampeonato])
+	FOREIGN KEY(codJuizPartida) REFERENCES [tbjuiz]([codJuiz])
+	FOREIGN KEY(codEstadioPartida) REFERENCES [tbestadio]([codEstadio])
+	FOREIGN KEY(codTimePartida) REFERENCES [tbtime]([codTime])
+	);
+CREATE INDEX idx_tbpartida on tbpartida(codPartida);
+
+
+CREATE TABLE IF NOT EXISTS tb_jogador_time_campeonato(
+	codCampeonato integer,
+	codTime integer,
+	codJogador integer,
+	FOREIGN KEY(codCampeonato) REFERENCES tbcampeonato(codCampeonato)
+	FOREIGN KEY(codTime) REFERENCES [tbtime]([codTime])
+	FOREIGN KEY(codJogador) REFERENCES [tbjogador]([codJogador])
+	);
