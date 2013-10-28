@@ -21,3 +21,9 @@ CREATE TABLE IF NOT EXISTS tbjuiz(
 	nomeJuiz TEXT
 	);
 CREATE INDEX idx_tbjuiz on tbjuiz(codJuiz);
+
+CREATE TABLE IF NOT EXISTS tbtime(
+	codTime integer primary key autoincrement,
+	nomeTime TEXT
+	);
+CREATE INDEX idx_tbtime on tbtime(codTime);

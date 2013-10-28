@@ -7,6 +7,7 @@ import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.EstadioModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JuizModel;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.TimeModel;
 
 import android.content.Context;
 
@@ -21,6 +22,7 @@ public class DaoFactory {
 		daos.put(EstadioModel.class, new EstadioDao(context));
 		daos.put(JogadorModel.class, new JogadorDao(context));
 		daos.put(JuizModel.class, new JuizDao(context));
+		daos.put(TimeModel.class, new TimeDao(context));
 		
 	}
 	

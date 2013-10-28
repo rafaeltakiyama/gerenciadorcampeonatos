@@ -30,8 +30,8 @@ public final class R {
         public static final int listaEstadio=0x7f090000;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c0001;
-        public static final int listView1=0x7f0c0000;
+        public static final int action_settings=0x7f0d0001;
+        public static final int listView1=0x7f0d0000;
     }
     public static final class jogadorActivity {
         public static final int listaJogador=0x7f0a0000;
@@ -44,7 +44,8 @@ public final class R {
         public static final int layout_atividade_lista_estadio=0x7f030001;
         public static final int layout_atividade_lista_jogador=0x7f030002;
         public static final int layout_atividade_lista_juiz=0x7f030003;
-        public static final int layout_atividade_principal=0x7f030004;
+        public static final int layout_atividade_lista_time=0x7f030004;
+        public static final int layout_atividade_principal=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -81,5 +82,8 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+    }
+    public static final class timeActivity {
+        public static final int listaTime=0x7f0c0000;
     }
 }

@@ -24,5 +24,10 @@ public class TimeModel implements Serializable{
 	public void setNomeTime(String nomeTime) {
 		this.nomeTime = nomeTime;
 	}
+	
+	@Override
+	public String toString() {
+		return getNomeTime();
+	}
 
 }

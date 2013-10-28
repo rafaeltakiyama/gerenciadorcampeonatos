@@ -8,9 +8,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import br.com.mouralacerda.gerenciadordecampeonatos.controller.JogadorController;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.JuizController;
-import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JuizModel;
 
 import com.example.gerenciadordecampeonatos.R;
