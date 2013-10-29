@@ -19,7 +19,11 @@ public class RodadaController {
 		rodadaList = DaoFactory.get(RodadaModel.class).selectAll();
 		BancoHelper.instance().close();
 		
-		return rodadaList;
+		if(rodadaList == null){
+			return null;
+		}else{
+			return rodadaList;
+		}
 	}
 	
 	public static boolean salvarRodada(Context context, List<RodadaModel> lisRodadaModel){

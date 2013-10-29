@@ -164,16 +164,16 @@ public abstract class Dao<T> {
 			BancoHelper.instance();
 			cursor = BancoHelper.db.rawQuery(sql, parametros);
 
+			List<T> result = null;
 			if (cursor.getCount() > 0 && cursor.moveToFirst()) {
-				List<T> result = new ArrayList<T>();
+				result = new ArrayList<T>();
 				do {
 					result.add(fromCursor(cursor));
 				} while (cursor.moveToNext());
 
 				return result;
 			}
-
-			return null;
+			return result;
 			//throw new RuntimeException("Não entrou no select");
 
 		} finally {

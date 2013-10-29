@@ -19,6 +19,7 @@ public class AtividadePrincipal extends ListActivity {
 		"Jogadores",
 		"Juizes",
 		"Times",
+		"Gerenciar Campeonato",
 		"Sair" };
 	private Context context;
 	
@@ -62,6 +63,10 @@ public class AtividadePrincipal extends ListActivity {
 			
 		case 4:
 			startActivity(new Intent(this, AtividadeListaTime.class));
+			break;
+			
+		case 5:
+			startActivity(new Intent(this, AtividadeGerenciaCampeonato.class));
 			break;
 		default:
 			finish();

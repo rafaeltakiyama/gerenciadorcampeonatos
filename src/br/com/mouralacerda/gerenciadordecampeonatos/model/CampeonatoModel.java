@@ -35,7 +35,7 @@ public class CampeonatoModel implements Serializable {
 
 	@Override
 	public String toString() {
-		return Html.fromHtml("<b>Campeonato:</b><br />") + getNomeCampeonato(); 
+		return getNomeCampeonato(); 
 	}
 	
 }
