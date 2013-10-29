@@ -27,6 +27,7 @@
         <activity android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadeListaJogador"></activity>
         <activity android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadeListaJuiz"></activity>
         <activity android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadeListaTime"></activity>
+        <activity android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadeGerenciaCampeonato"></activity>
         
     </application>
 

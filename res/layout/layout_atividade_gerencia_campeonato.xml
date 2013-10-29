@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+gereciaActivity/txtAddCampeonato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/adicionarCampeonato" />
+
+    <Spinner
+        android:id="@+gereciaActivity/spinnerCampeonato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+gereciaActivity/txtAddCampeonato" />
+
+    <TextView
+        android:id="@+gereciaActivity/txtAddRodada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+gereciaActivity/spinnerCampeonato"
+        android:layout_marginTop="30dp"
+        android:text="@string/adicionarRodada" />
+
+    <Spinner
+        android:id="@+gereciaActivity/spinnerRodada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+gereciaActivity/txtAddRodada" />
+
+</RelativeLayout>

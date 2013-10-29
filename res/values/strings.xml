@@ -3,6 +3,7 @@
 
     <string name="app_name">GerenciadorCampeonatos</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="adicionarCampeonato">"Adicionar um Campeonato:"</string>
+    <string name="adicionarRodada">"Adicionar uma Rodada:"</string>
 
 </resources>
