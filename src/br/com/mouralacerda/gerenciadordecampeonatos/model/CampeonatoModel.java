@@ -3,6 +3,7 @@ package br.com.mouralacerda.gerenciadordecampeonatos.model;
 import java.io.Serializable;
 import java.util.List;
 
+import android.text.Html;
 import br.com.mouralacerda.gerenciadordecampeonatos.dao.DaoFactory;
 
 public class CampeonatoModel implements Serializable {
@@ -34,7 +35,7 @@ public class CampeonatoModel implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Campeonato: \n" + getNomeCampeonato(); 
+		return Html.fromHtml("<b>Campeonato:</b><br />") + getNomeCampeonato(); 
 	}
 	
 }

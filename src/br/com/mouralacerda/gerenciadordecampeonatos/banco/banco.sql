@@ -39,9 +39,9 @@ CREATE TABLE IF NOT EXISTS tbpartida(
 	codPartida integer primary key autoincrement,
 	codRodadaPartida integer,
 	codCampeonatoPartida integer,
-  codJuizPartida integer,  
-  codEstadioPartida integer,  
-  codTimePartida integer,
+  	codJuizPartida integer,  
+  	codEstadioPartida integer,  
+  	codTimePartida integer,
 	FOREIGN KEY(codRodadaPartida) REFERENCES [tbrodada]([codRodada])
 	FOREIGN KEY(codCampeonatoPartida) REFERENCES [tbcampeonato]([codCampeonato])
 	FOREIGN KEY(codJuizPartida) REFERENCES [tbjuiz]([codJuiz])
