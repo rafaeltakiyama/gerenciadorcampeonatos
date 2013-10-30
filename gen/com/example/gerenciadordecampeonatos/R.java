@@ -30,8 +30,8 @@ public final class R {
         public static final int listaEstadio=0x7f0a0000;
     }
     public static final class gereciaActivity {
+        public static final int btnRodada=0x7f080003;
         public static final int spinnerCampeonato=0x7f080001;
-        public static final int spinnerRodada=0x7f080003;
         public static final int txtAddCampeonato=0x7f080000;
         public static final int txtAddRodada=0x7f080002;
     }
@@ -62,6 +62,7 @@ public final class R {
         public static final int adicionarCampeonato=0x7f050002;
         public static final int adicionarRodada=0x7f050003;
         public static final int app_name=0x7f050000;
+        public static final int rodada=0x7f050004;
     }
     public static final class style {
         /** 

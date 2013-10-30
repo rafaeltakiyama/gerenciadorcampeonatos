@@ -26,13 +26,13 @@
         android:layout_marginTop="30dp"
         android:text="@string/adicionarRodada" />
 
-    <Spinner
-        android:id="@+gereciaActivity/spinnerRodada"
+    <Button
+        android:id="@+gereciaActivity/btnRodada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+gereciaActivity/txtAddRodada" />
-    
-    
+        android:layout_below="@+gereciaActivity/txtAddRodada"
+        android:text="@string/rodada"
+        android:visibility="gone" />
 
 </RelativeLayout>
