@@ -69,7 +69,7 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 
 	@Override
 	public Object getGroup(int groupPosition) {
-		return groupCampeonatoList.get(groupPosition);
+		return groupCampeonatoList.get(groupPosition).getNomeCampeonato();
 	}
 
 	@Override

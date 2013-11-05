@@ -41,11 +41,12 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 		createGroupList();
 
 		createCollection();
-		
+
 		expListView = (ExpandableListView) findViewById(R.campeonatoAbertoActivity.listaCampeonato);
-		CustonAdapterCompeonatoExpList expListAdapter = new CustonAdapterCompeonatoExpList(context, groupCampeonatoList, collection);
+		CustonAdapterCompeonatoExpList expListAdapter = new CustonAdapterCompeonatoExpList(
+				context, groupCampeonatoList, collection);
 		expListView.setAdapter(expListAdapter);
-		
+
 	}
 
 	private List<CampeonatoModel> createGroupList() {
@@ -76,29 +77,43 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 	}
 
 	private Map<String, List<RodadaModel>> createCollection() {
-		childRodadaList = new ArrayList<RodadaModel>();
 
 		rodadaList = new ArrayList<RodadaModel>();
 		rodadaList = RodadaController.getRodadas(context);
 
 		collection = new LinkedHashMap<String, List<RodadaModel>>();
 
-		String nameCameponato = null;
-		CampeonatoModel c = new CampeonatoModel();
-		for (int i = 0; i < groupCampeonatoList.size(); i++) {
-			c = groupCampeonatoList.get(i);
+	//	String nameCameponato = null;
+		// CampeonatoModel c = new CampeonatoModel();
+//		for (int i = 0; i < groupCampeonatoList.size(); i++) {
+//			c = groupCampeonatoList.get(i);
+//
+//			// for (RodadaModel r : rodadaList) {
+//			// if (c.getCodCampeonato() == r.getCampeonatoRodada()
+//			// .getCodCampeonato()) {
+//			// childRodadaList.add(r);
+//			// nameCameponato = c.getNomeCampeonato();
+//			// }
+//			// }
+//			collection.put(nameCameponato, childRodadaList);
+//		}
+
+		int i = 0;
+		RodadaModel r = new RodadaModel();
+		r = rodadaList.get(i);
+		for (CampeonatoModel c : groupCampeonatoList) {
 			
-			for (RodadaModel r : rodadaList) {
-				if (c.getCodCampeonato() == r.getCampeonatoRodada()
-						.getCodCampeonato()) {
-					childRodadaList.add(r);
-					nameCameponato = c.getNomeCampeonato();
-				}
+			childRodadaList = new ArrayList<RodadaModel>();
+			i = 0;
+			while (c.getCodCampeonato() == r.getCampeonatoRodada()
+					.getCodCampeonato() && i <= rodadaList.size()) {
+				childRodadaList.add(r);
+				i++;
+				r = rodadaList.get(i); //testar tirar a comparacao do cod e deixar apenas a do size
 			}
-			collection.put(nameCameponato, childRodadaList);
+			collection.put(c.getNomeCampeonato(), childRodadaList);
 		}
-		
-		
+
 		return collection;
 
 	}
