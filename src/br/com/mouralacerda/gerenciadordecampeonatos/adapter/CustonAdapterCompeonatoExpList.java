@@ -29,9 +29,9 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 	}
 
 	@Override
-	public String getChild(int groupPosition, int childPosition) {
-		return String.valueOf(collection.get(groupCampeonatoList.get(groupPosition).getNomeCampeonato()).get(
-				childPosition).getNumeroRodada());
+	public RodadaModel getChild(int groupPosition, int childPosition) {
+		return collection.get(groupCampeonatoList.get(groupPosition).getNomeCampeonato()).get(
+				childPosition);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 	public View getChildView(int groupPosition, int childPosition,
 			boolean isLastChild, View convertView, ViewGroup parent) {
 
-		final String childRodada = getChild(groupPosition,
+		final RodadaModel childRodada = getChild(groupPosition,
 				childPosition);
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -56,7 +56,8 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 		TextView item = (TextView) convertView
 				.findViewById(R.itemChild.childRodada);
 
-		item.setText("Rodada " + childRodada);
+		item.setTypeface(null, Typeface.ITALIC);
+		item.setText("Rodada " + childRodada.getNumeroRodada());
 		return convertView;
 	}
 
@@ -111,5 +112,7 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 		// TODO Auto-generated method stub
 		return true;
 	}
+	
+	
 
 }

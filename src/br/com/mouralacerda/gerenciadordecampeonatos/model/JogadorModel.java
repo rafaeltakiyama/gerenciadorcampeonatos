@@ -27,7 +27,7 @@ public class JogadorModel implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Nome jogador: \n" + getNomeJogador();
+		return getNomeJogador();
 	}
 	
 }
