@@ -11,6 +11,7 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.widget.ExpandableListView;
 import br.com.mouralacerda.gerenciadordecampeonatos.adapter.CustonAdapterCompeonatoExpList;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.RodadaController;
@@ -83,33 +84,14 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 
 		collection = new LinkedHashMap<String, List<RodadaModel>>();
 
-	//	String nameCameponato = null;
-		// CampeonatoModel c = new CampeonatoModel();
-//		for (int i = 0; i < groupCampeonatoList.size(); i++) {
-//			c = groupCampeonatoList.get(i);
-//
-//			// for (RodadaModel r : rodadaList) {
-//			// if (c.getCodCampeonato() == r.getCampeonatoRodada()
-//			// .getCodCampeonato()) {
-//			// childRodadaList.add(r);
-//			// nameCameponato = c.getNomeCampeonato();
-//			// }
-//			// }
-//			collection.put(nameCameponato, childRodadaList);
-//		}
-
-		int i = 0;
-		RodadaModel r = new RodadaModel();
-		r = rodadaList.get(i);
 		for (CampeonatoModel c : groupCampeonatoList) {
 			
 			childRodadaList = new ArrayList<RodadaModel>();
-			i = 0;
-			while (c.getCodCampeonato() == r.getCampeonatoRodada()
-					.getCodCampeonato() && i <= rodadaList.size()) {
-				childRodadaList.add(r);
-				i++;
-				r = rodadaList.get(i); //testar tirar a comparacao do cod e deixar apenas a do size
+
+			for(RodadaModel ro : rodadaList){
+				if(c.getCodCampeonato() == ro.getCampeonatoRodada().getCodCampeonato()){
+					childRodadaList.add(ro);
+				}
 			}
 			collection.put(c.getNomeCampeonato(), childRodadaList);
 		}

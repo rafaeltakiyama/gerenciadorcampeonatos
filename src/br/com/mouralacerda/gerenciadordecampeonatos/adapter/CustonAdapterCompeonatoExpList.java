@@ -21,8 +21,7 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 	private List<CampeonatoModel> groupCampeonatoList;
 	private Map<String, List<RodadaModel>> collection;
 
-	public CustonAdapterCompeonatoExpList(Context context,
-			List<CampeonatoModel> groupCampeonatoList,
+	public CustonAdapterCompeonatoExpList(Context context, List<CampeonatoModel> groupCampeonatoList,
 			Map<String, List<RodadaModel>> collection) {
 		this.context = context;
 		this.groupCampeonatoList = groupCampeonatoList;
@@ -30,9 +29,9 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 	}
 
 	@Override
-	public Object getChild(int groupPosition, int childPosition) {
-		return collection.get(groupCampeonatoList.get(groupPosition)).get(
-				childPosition);
+	public String getChild(int groupPosition, int childPosition) {
+		return String.valueOf(collection.get(groupCampeonatoList.get(groupPosition).getNomeCampeonato()).get(
+				childPosition).getNumeroRodada());
 	}
 
 	@Override
@@ -44,7 +43,7 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 	public View getChildView(int groupPosition, int childPosition,
 			boolean isLastChild, View convertView, ViewGroup parent) {
 
-		final String childRodada = (String) getChild(groupPosition,
+		final String childRodada = getChild(groupPosition,
 				childPosition);
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -57,14 +56,15 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 		TextView item = (TextView) convertView
 				.findViewById(R.itemChild.childRodada);
 
-		item.setText(childRodada);
+		item.setText("Rodada " + childRodada);
 		return convertView;
 	}
 
 	@Override
 	public int getChildrenCount(int groupPosition) {
 		// TODO Auto-generated method stub
-		return collection.get(groupCampeonatoList.get(groupPosition)).size();
+		int i = collection.get(groupCampeonatoList.get(groupPosition).getNomeCampeonato()).size();
+		return i;
 	}
 
 	@Override
