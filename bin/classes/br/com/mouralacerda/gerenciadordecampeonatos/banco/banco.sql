@@ -30,6 +30,7 @@ CREATE INDEX idx_tbtime on tbtime(codTime);
 
 CREATE TABLE IF NOT EXISTS tbrodada(
 	codRodada integer primary key autoincrement,
+  	numeroRodada integer not null,
 	codCampeonatoRodada integer,
 	FOREIGN KEY(codCampeonatoRodada) REFERENCES tbcampeonato(codCampeonato)
 	);
@@ -37,7 +38,7 @@ CREATE INDEX idx_tbrodada on tbrodada(codRodada);
 
 CREATE TABLE IF NOT EXISTS tbpartida(
 	codPartida integer primary key autoincrement,
-	codRodadaPartida integer,
+	numeroRodadaPartida integer,
 	codCampeonatoPartida integer,
   	codJuizPartida integer,  
   	codEstadioPartida integer,  

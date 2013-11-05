@@ -20,6 +20,7 @@ public class AtividadePrincipal extends ListActivity {
 		"Juizes",
 		"Times",
 		"Gerenciar Campeonato",
+		"Campeonatos Abertos",
 		"Sair" };
 	private Context context;
 	
@@ -33,7 +34,6 @@ public class AtividadePrincipal extends ListActivity {
 		DaoFactory.init(context);
 		
 		this.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomes));
-
 	}
 
 	@Override
@@ -67,6 +67,10 @@ public class AtividadePrincipal extends ListActivity {
 			
 		case 5:
 			startActivity(new Intent(this, AtividadeGerenciaCampeonato.class));
+			break;
+			
+		case 6:
+			startActivity(new Intent(this, AtividadeListaCampeonatoAberto.class));
 			break;
 		default:
 			finish();

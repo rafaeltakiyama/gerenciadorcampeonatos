@@ -14,6 +14,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.CampeonatoController;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.RodadaController;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
@@ -27,8 +28,10 @@ public class AtividadeGerenciaCampeonato extends Activity {
 	private Context context;
 	private HashMap<String, Integer> campeonatoHash;
 	private ArrayList<String> campeonatoArray;
-	private ArrayList<String> rodadaArray;
 	private int codCampeonato;
+
+	private ArrayList<String> rodadaArray;
+	private List<RodadaModel> rodadaList;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -79,7 +82,7 @@ public class AtividadeGerenciaCampeonato extends Activity {
 
 							codCampeonato = campeonatoHash.get(campeonatoKey);
 
-							btnRodada();
+							btnRodada(campeonatoKey);
 						}
 					}
 
@@ -90,6 +93,25 @@ public class AtividadeGerenciaCampeonato extends Activity {
 
 	}
 
-	protected void btnRodada() {
+	protected void btnRodada(String campeonatoKey) {
+		
+		Button btnRodada = (Button) findViewById(R.gereciaActivity.btnRodada);
+		
+		rodadaList = new ArrayList<RodadaModel>();
+		
+		rodadaList = RodadaController.getRodadas(context);
+		
+		if(rodadaList != null){
+			
+			Toast.makeText(context, "O campeonato " + campeonatoKey + " já foi iniciado!", Toast.LENGTH_SHORT).show();
+			
+			int numRodada = rodadaList.size() + 1;
+			btnRodada.setText("Rodada " + numRodada);
+			btnRodada.setVisibility(View.VISIBLE);
+		}else{
+			btnRodada.setText("Rodada 1");
+			btnRodada.setVisibility(View.VISIBLE);
+		}
+		
 	}
 }

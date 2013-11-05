@@ -17,7 +17,7 @@ public class JogadorDao extends Dao<JogadorModel>{
 	}
 
 	@Override
-	protected String whereClause(JogadorModel element) {
+	protected String whereClause() {
 		return "codJogador = ?";
 	}
 

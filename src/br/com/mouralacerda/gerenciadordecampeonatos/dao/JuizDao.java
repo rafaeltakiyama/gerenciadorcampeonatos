@@ -17,7 +17,7 @@ public class JuizDao extends Dao<JuizModel>{
 	}
 
 	@Override
-	protected String whereClause(JuizModel element) {
+	protected String whereClause() {
 		return "codJuiz = ?";
 	}
 

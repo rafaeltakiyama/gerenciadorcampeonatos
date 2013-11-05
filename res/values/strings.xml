@@ -6,5 +6,7 @@
     <string name="adicionarCampeonato">"Adicionar um Campeonato:"</string>
     <string name="adicionarRodada">"Adicionar uma Rodada:"</string>
     <string name="rodada">Rodada 1</string>
+    <string name="rodadaChild">rodada child</string>
+    <string name="groupCamp">Campeonato Nome</string>
 
 </resources>

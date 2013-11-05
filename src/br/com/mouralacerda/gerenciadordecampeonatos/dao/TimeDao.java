@@ -17,7 +17,7 @@ public class TimeDao extends Dao<TimeModel>{
 	}
 
 	@Override
-	protected String whereClause(TimeModel element) {
+	protected String whereClause() {
 		return "codTime = ?";
 	}
 

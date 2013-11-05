@@ -7,7 +7,7 @@ public class PartidaModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int codCampenato;
-	private int codRodada;
+	private int numeroRodada;
 	private int codPartida;
 	private int codJuiz;
 	private int codEstadio;
@@ -21,12 +21,12 @@ public class PartidaModel implements Serializable {
 		this.codCampenato = codCampenato;
 	}
 
-	public int getCodRodada() {
-		return codRodada;
+	public int getNumeroRodada() {
+		return numeroRodada;
 	}
 
-	public void setCodRodada(int codRodada) {
-		this.codRodada = codRodada;
+	public void setNumeroRodada(int numeroRodada) {
+		this.numeroRodada = numeroRodada;
 	}
 
 	public int getCodPartida() {

@@ -17,7 +17,7 @@ public class EstadioDao extends Dao<EstadioModel>{
 	}
 
 	@Override
-	protected String whereClause(EstadioModel element) {
+	protected String whereClause() {
 		return "codEstadio = ?";
 	}
 

@@ -25,15 +25,4 @@ public class RodadaController {
 			return rodadaList;
 		}
 	}
-	
-	public static boolean salvarRodada(Context context, List<RodadaModel> lisRodadaModel){
-		
-		if(lisRodadaModel != null){
-			RodadaModel rodada = new RodadaModel();
-			rodada.salvar(lisRodadaModel);
-			return true;
-		}else{
-			return false;
-		}
-	}
 }

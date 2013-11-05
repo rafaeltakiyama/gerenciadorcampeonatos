@@ -10,6 +10,9 @@ package com.example.gerenciadordecampeonatos;
 public final class R {
     public static final class attr {
     }
+    public static final class campeonatoAbertoActivity {
+        public static final int listaCampeonato=0x7f0a0000;
+    }
     public static final class campeonatoActivity {
         public static final int listaCampeonato=0x7f090000;
     }
@@ -27,7 +30,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class estadioActivity {
-        public static final int listaEstadio=0x7f0a0000;
+        public static final int listaEstadio=0x7f0b0000;
     }
     public static final class gereciaActivity {
         public static final int btnRodada=0x7f080003;
@@ -35,24 +38,33 @@ public final class R {
         public static final int txtAddCampeonato=0x7f080000;
         public static final int txtAddRodada=0x7f080002;
     }
+    public static final class groupCampeonato {
+        public static final int groupName=0x7f110000;
+    }
     public static final class id {
-        public static final int action_settings=0x7f0e0001;
-        public static final int listView1=0x7f0e0000;
+        public static final int action_settings=0x7f0f0001;
+        public static final int listView1=0x7f0f0000;
+    }
+    public static final class itemChild {
+        public static final int childRodada=0x7f100000;
     }
     public static final class jogadorActivity {
-        public static final int listaJogador=0x7f0b0000;
+        public static final int listaJogador=0x7f0c0000;
     }
     public static final class juizActivity {
-        public static final int listaJuiz=0x7f0c0000;
+        public static final int listaJuiz=0x7f0d0000;
     }
     public static final class layout {
         public static final int layout_atividade_gerencia_campeonato=0x7f030000;
         public static final int layout_atividade_lista_campeonato=0x7f030001;
-        public static final int layout_atividade_lista_estadio=0x7f030002;
-        public static final int layout_atividade_lista_jogador=0x7f030003;
-        public static final int layout_atividade_lista_juiz=0x7f030004;
-        public static final int layout_atividade_lista_time=0x7f030005;
-        public static final int layout_atividade_principal=0x7f030006;
+        public static final int layout_atividade_lista_campeonato_aberto=0x7f030002;
+        public static final int layout_atividade_lista_estadio=0x7f030003;
+        public static final int layout_atividade_lista_jogador=0x7f030004;
+        public static final int layout_atividade_lista_juiz=0x7f030005;
+        public static final int layout_atividade_lista_time=0x7f030006;
+        public static final int layout_atividade_principal=0x7f030007;
+        public static final int layout_item_child_rodada=0x7f030008;
+        public static final int layout_item_group_campeonato=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -62,7 +74,9 @@ public final class R {
         public static final int adicionarCampeonato=0x7f050002;
         public static final int adicionarRodada=0x7f050003;
         public static final int app_name=0x7f050000;
+        public static final int groupCamp=0x7f050006;
         public static final int rodada=0x7f050004;
+        public static final int rodadaChild=0x7f050005;
     }
     public static final class style {
         /** 
@@ -93,6 +107,6 @@ public final class R {
         public static final int AppTheme=0x7f060001;
     }
     public static final class timeActivity {
-        public static final int listaTime=0x7f0d0000;
+        public static final int listaTime=0x7f0e0000;
     }
 }
