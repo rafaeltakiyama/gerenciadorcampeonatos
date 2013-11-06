@@ -11,7 +11,6 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.util.Linkify;
 import android.widget.ExpandableListView;
 import br.com.mouralacerda.gerenciadordecampeonatos.adapter.CustonAdapterCompeonatoExpList;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.RodadaController;

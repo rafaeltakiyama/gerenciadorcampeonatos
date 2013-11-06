@@ -8,5 +8,13 @@
     <string name="rodada">Rodada 1</string>
     <string name="rodadaChild">rodada child</string>
     <string name="groupCamp">Campeonato Nome</string>
+    <string name="time1txt">Time 1</string>
+    <string name="time2txt">Time 2</string>
+    <string name="x">X</string>
+    <string name="estadio">Estádio:</string>
+    <string name="juiz">Juiz:</string>
+    <string name="ok">OK</string>
+    <string name="nomeJuiz">nome juiz</string>
+    <string name="nomeEstadio">nome estádio</string>
 
 </resources>
