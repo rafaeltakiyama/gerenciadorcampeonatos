@@ -38,16 +38,18 @@ CREATE INDEX idx_tbrodada on tbrodada(codRodada);
 
 CREATE TABLE IF NOT EXISTS tbpartida(
 	codPartida integer primary key autoincrement,
-	numeroRodadaPartida integer,
 	codCampeonatoPartida integer,
+	numeroRodadaPartida integer,
   	codJuizPartida integer,  
   	codEstadioPartida integer,  
-  	codTimePartida integer,
-	FOREIGN KEY(codRodadaPartida) REFERENCES [tbrodada]([codRodada])
-	FOREIGN KEY(codCampeonatoPartida) REFERENCES [tbcampeonato]([codCampeonato])
-	FOREIGN KEY(codJuizPartida) REFERENCES [tbjuiz]([codJuiz])
-	FOREIGN KEY(codEstadioPartida) REFERENCES [tbestadio]([codEstadio])
-	FOREIGN KEY(codTimePartida) REFERENCES [tbtime]([codTime])
+  	codTime1Partida integer,
+  	codTime2Partida integer,
+	FOREIGN KEY(codCampeonatoPartida) REFERENCES [tbcampeonato]([codCampeonato]),
+  FOREIGN KEY(numeroRodadaPartida) REFERENCES [tbrodada]([numeroRodada]),
+	FOREIGN KEY(codJuizPartida) REFERENCES [tbjuiz]([codJuiz]),
+	FOREIGN KEY(codEstadioPartida) REFERENCES [tbestadio]([codEstadio]),
+	FOREIGN KEY(codTime1Partida) REFERENCES [tbtime]([codTime]),
+	FOREIGN KEY(codTime2Partida) REFERENCES [tbtime]([codTime])
 	);
 CREATE INDEX idx_tbpartida on tbpartida(codPartida);
 

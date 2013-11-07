@@ -40,27 +40,27 @@ public class PartidaDao extends Dao<PartidaModel> {
 		pModel.setCodPartida(cursor.getInt(idxCodPartida));
 		
 		CampeonatoDao daoCamp = (CampeonatoDao) DaoFactory.get(CampeonatoModel.class);		
-		int idxCampeonatoPartida = cursor.getColumnIndex("campeonatoPartida");
+		int idxCampeonatoPartida = cursor.getColumnIndex("codCampeonatoPartida");
 		pModel.setCampeonatoPartida(daoCamp.select(cursor.getInt(idxCampeonatoPartida)));
 		
 		RodadaDao daoRodada = (RodadaDao) DaoFactory.get(RodadaModel.class);
-		int idxRodadaPartida = cursor.getColumnIndex("rodadaPartida");
+		int idxRodadaPartida = cursor.getColumnIndex("numeroRodadaPartida");
 		pModel.setRodadaPartida(daoRodada.select(cursor.getInt(idxRodadaPartida)));
 		
 		JuizDao daoJuiz = (JuizDao) DaoFactory.get(JuizModel.class);
-		int idxJuizPartida = cursor.getColumnIndex("juizPartida");
+		int idxJuizPartida = cursor.getColumnIndex("codJuizPartida");
 		pModel.setJuizPartida(daoJuiz.select(cursor.getInt(idxJuizPartida)));
 		
 		EstadioDao daoEst = (EstadioDao) DaoFactory.get(EstadioModel.class);
-		int idxEstadioPartida = cursor.getColumnIndex("estadioPartida");
+		int idxEstadioPartida = cursor.getColumnIndex("codEstadioPartida");
 		pModel.setEstadioPartida(daoEst.select(cursor.getInt(idxEstadioPartida)));
 
 		TimeDao daoTime1 = (TimeDao) DaoFactory.get(TimeModel.class);
-		int idxTime1Partida = cursor.getColumnIndex("time1Partida");
+		int idxTime1Partida = cursor.getColumnIndex("codTime1Partida");
 		pModel.setTime1Partida(daoTime1.select(cursor.getInt(idxTime1Partida)));
 		
 		TimeDao daoTime2 = (TimeDao) DaoFactory.get(TimeModel.class);
-		int idxTime2Partida = cursor.getColumnIndex("time2Partida");
+		int idxTime2Partida = cursor.getColumnIndex("codTime2Partida");
 		pModel.setTime2Partida(daoTime2.select(cursor.getInt(idxTime2Partida)));
 		
 		return pModel;
