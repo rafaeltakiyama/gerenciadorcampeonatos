@@ -1,10 +1,12 @@
 package br.com.mouralacerda.gerenciadordecampeonatos.adapter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface.OnClickListener;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +15,9 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import br.com.mouralacerda.gerenciadordecampeonatos.controller.PartidaController;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.PartidaModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.RodadaModel;
 
 import com.example.gerenciadordecampeonatos.R;
@@ -31,7 +35,7 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 		this.groupCampeonatoList = groupCampeonatoList;
 		this.collection = collection;
 	}
-
+	
 	@Override
 	public RodadaModel getChild(int groupPosition, int childPosition) {
 		return collection.get(
@@ -62,6 +66,9 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 
 		item.setTypeface(null, Typeface.NORMAL);
 		item.setText("Rodada " + childRodada.getNumeroRodada());
+		
+//		showCustomDialog(childRodada.getNumeroRodada(), 
+//				childRodada.getCampeonatoRodada().getCodCampeonato());
 		return convertView;
 	}
 
@@ -108,6 +115,7 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 
 	}
 
+	
 	@Override
 	public boolean hasStableIds() {
 		// TODO Auto-generated method stub
@@ -119,31 +127,4 @@ public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
 		// TODO Auto-generated method stub
 		return true;
 	}
-
-	private void showCustomDialog() {
-
-		final Dialog dialog = new Dialog(context);
-
-		dialog.setContentView(R.layout.layout_dialog_mostra_info);// carregando
-																	// o layout
-																	// do dialog
-																	// do xml
-		dialog.setTitle("Título do custom dialog");// título do dialog
-
-		final Button ok = (Button) dialog.findViewById(R.dialog.btnOk);// se atentem ao dialog.
-		final TextView time1 = (TextView) dialog.findViewById(R.dialog.time1);
-		final TextView time2 = (TextView) dialog.findViewById(R.dialog.time2);
-		final TextView nomeEstadio = (TextView) dialog.findViewById(R.dialog.nomeEstadio);
-		final TextView nomeJuiz = (TextView) dialog.findViewById(R.dialog.nomeJuiz);
-		
-		ok.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				// ação do botão ok
-				dialog.dismiss();// encerra o dialog
-			}
-		});
-		dialog.show();// mostra o dialog
-
-	}
-
 }

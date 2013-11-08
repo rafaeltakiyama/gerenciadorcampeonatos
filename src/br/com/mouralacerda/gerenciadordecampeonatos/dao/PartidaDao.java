@@ -39,13 +39,13 @@ public class PartidaDao extends Dao<PartidaModel> {
 		int idxCodPartida = cursor.getColumnIndex("codPartida");
 		pModel.setCodPartida(cursor.getInt(idxCodPartida));
 		
-		CampeonatoDao daoCamp = (CampeonatoDao) DaoFactory.get(CampeonatoModel.class);		
-		int idxCampeonatoPartida = cursor.getColumnIndex("codCampeonatoPartida");
-		pModel.setCampeonatoPartida(daoCamp.select(cursor.getInt(idxCampeonatoPartida)));
-		
 		RodadaDao daoRodada = (RodadaDao) DaoFactory.get(RodadaModel.class);
-		int idxRodadaPartida = cursor.getColumnIndex("numeroRodadaPartida");
+		int idxRodadaPartida = cursor.getColumnIndex("codRodadaPartida");
 		pModel.setRodadaPartida(daoRodada.select(cursor.getInt(idxRodadaPartida)));
+		
+//		CampeonatoDao daoCamp = (CampeonatoDao) DaoFactory.get(CampeonatoModel.class);		
+//		int idxCampeonatoPartida = cursor.getColumnIndex("codCampeonatoPartida");
+//		pModel.setCampeonatoPartida(daoCamp.select(cursor.getInt(idxCampeonatoPartida)));
 		
 		JuizDao daoJuiz = (JuizDao) DaoFactory.get(JuizModel.class);
 		int idxJuizPartida = cursor.getColumnIndex("codJuizPartida");
@@ -72,7 +72,7 @@ public class PartidaDao extends Dao<PartidaModel> {
 		ContentValues values = new ContentValues();
 		
 		values.put("codPartida", element.getCodPartida());
-		values.put("campeonatoPartida", element.getCampeonatoPartida().getCodCampeonato());
+//		values.put("campeonatoPartida", element.getCampeonatoPartida().getCodCampeonato());
 		values.put("rodadaPartida", element.getRodadaPartida().getCodRodada());
 		values.put("juizPartida", element.getJuizPartida().getCodJuiz());
 		values.put("estadioPartida", element.getEstadioPartida().getCodEstadio());
