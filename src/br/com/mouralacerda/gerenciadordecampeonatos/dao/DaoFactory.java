@@ -6,6 +6,7 @@ import java.util.Map;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.EstadioModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorModel;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorTimeCampeonatoModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JuizModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.PartidaModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.RodadaModel;
@@ -27,6 +28,7 @@ public class DaoFactory {
 		daos.put(TimeModel.class, new TimeDao(context));
 		daos.put(RodadaModel.class, new RodadaDao(context));
 		daos.put(PartidaModel.class, new PartidaDao(context));
+		daos.put(JogadorTimeCampeonatoModel.class, new JogadorTimeCampeonatoDao(context));
 		
 	}
 	

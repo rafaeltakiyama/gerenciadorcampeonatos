@@ -5,33 +5,42 @@ import java.io.Serializable;
 public class JogadorTimeCampeonatoModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	private int codCampenato;
-	private int codTime;
-	private int codJogador;
 
-	public int getCodCampenato() {
-		return codCampenato;
+	private int codJogadorTimeCampeonato;
+	private CampeonatoModel campeonato;
+	private TimeModel times;
+	private JogadorModel jogador;
+
+	public int getCodJogadorTimeCampeonato() {
+		return codJogadorTimeCampeonato;
 	}
 
-	public void setCodCampenato(int codCampenato) {
-		this.codCampenato = codCampenato;
+	public void setCodJogadorTimeCampeonato(int codJogadorTimeCampeonato) {
+		this.codJogadorTimeCampeonato = codJogadorTimeCampeonato;
 	}
 
-	public int getCodTime() {
-		return codTime;
+	public CampeonatoModel getCampeonato() {
+		return campeonato;
 	}
 
-	public void setCodTime(int codTime) {
-		this.codTime = codTime;
+	public void setCampeonato(CampeonatoModel campeonato) {
+		this.campeonato = campeonato;
 	}
 
-	public int getCodJogador() {
-		return codJogador;
+	public TimeModel getTime() {
+		return times;
 	}
 
-	public void setCodJogador(int codJogador) {
-		this.codJogador = codJogador;
+	public void setTime(TimeModel time) {
+		this.times = time;
+	}
+
+	public JogadorModel getJogador() {
+		return jogador;
+	}
+
+	public void setJogador(JogadorModel jogador) {
+		this.jogador = jogador;
 	}
 
 }

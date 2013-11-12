@@ -36,14 +36,6 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+dialog/time1"
         android:text="@string/estadio" />
-    
-    <Button
-        android:id="@+dialog/btnOk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+dialog/juiz"
-        android:text="@string/ok" />
 
     <TextView
         android:id="@+dialog/juiz"
@@ -54,20 +46,28 @@
         android:text="@string/juiz" />
 
     <TextView
-        android:id="@+dialog/nomeEstadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+dialog/estadio"
-        android:layout_alignBottom="@+dialog/estadio"
-        android:layout_toRightOf="@+dialog/estadio"
-        android:text="@string/nomeEstadio" />
-
-    <TextView
         android:id="@+dialog/nomeJuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+dialog/btnOk"
         android:layout_toRightOf="@+dialog/juiz"
+        android:paddingLeft="5dp"
         android:text="@string/nomeJuiz" />
+
+    <TextView
+        android:id="@+dialog/nomeEstadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+dialog/nomeJuiz"
+        android:layout_toRightOf="@+dialog/estadio"
+        android:paddingLeft="5dp"
+        android:text="@string/nomeEstadio" />
+
+    <Button
+        android:id="@+dialog/btnOk"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+dialog/juiz"
+        android:text="@string/ok" />
 
 </RelativeLayout>

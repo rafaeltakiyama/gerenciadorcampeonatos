@@ -11,8 +11,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import br.com.mouralacerda.gerenciadordecampeonatos.controller.JogadorTimeCampeonatoController;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.PartidaController;
 import br.com.mouralacerda.gerenciadordecampeonatos.dao.DaoFactory;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorTimeCampeonatoModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.PartidaModel;
 
 import com.example.gerenciadordecampeonatos.R;
@@ -39,6 +41,10 @@ public class AtividadePrincipal extends ListActivity {
 		DaoFactory.init(context);
 		
 		this.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomes));
+		
+		List<JogadorTimeCampeonatoModel> jtcModel = new ArrayList<JogadorTimeCampeonatoModel>();
+		
+		jtcModel = JogadorTimeCampeonatoController.getJogadorTimeCampeonato(context);
 		
 	}
 

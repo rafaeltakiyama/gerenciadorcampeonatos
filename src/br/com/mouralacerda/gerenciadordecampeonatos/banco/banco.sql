@@ -54,10 +54,12 @@ CREATE TABLE IF NOT EXISTS tbjuiz(
 CREATE UNIQUE INDEX idx_tbjuiz on tbjuiz(codJuiz);
 
 CREATE TABLE IF NOT EXISTS tb_jogador_time_campeonato(
-  codCampeonato integer,
-	codTime integer,
-	codJogador integer,
-	FOREIGN KEY(codCampeonato) REFERENCES tbcampeonato(codCampeonato)
-	FOREIGN KEY(codTime) REFERENCES [tbtime]([codTime])
-	FOREIGN KEY(codJogador) REFERENCES [tbjogador]([codJogador])
+  codJogadorTimeCampeonato integer primary key autoincrement,
+	campeonato integer,
+	times integer,
+	jogador integer,
+	FOREIGN KEY(campeonato) REFERENCES tbcampeonato(codCampeonato)
+	FOREIGN KEY(times) REFERENCES [tbtime]([codTime])
+	FOREIGN KEY(jogador) REFERENCES [tbjogador]([codJogador])
 	);
+CREATE UNIQUE INDEX idx_tb_jogador_time_campeonato on tb_jogador_time_campeonato(codJogadorTimeCampeonato);

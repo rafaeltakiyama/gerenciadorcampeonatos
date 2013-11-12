@@ -16,5 +16,6 @@
     <string name="ok">OK</string>
     <string name="nomeJuiz">nome juiz</string>
     <string name="nomeEstadio">nome estádio</string>
+    <string name="titulo">titulo</string>
 
 </resources>
