@@ -9,17 +9,19 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
-import android.widget.TextView;
 import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.Toast;
+import android.widget.ListView;
+import android.widget.TextView;
 import br.com.mouralacerda.gerenciadordecampeonatos.adapter.CustonAdapterCompeonatoExpList;
+import br.com.mouralacerda.gerenciadordecampeonatos.adapter.PartidaListAdapter;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.PartidaController;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.RodadaController;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
@@ -43,7 +45,7 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.layout_atividade_lista_campeonato_aberto);
+		setContentView(R.layout.layout_atividade_exp_lista_campeonato_aberto);
 
 		context = this;
 
@@ -56,23 +58,26 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 				context, groupCampeonatoList, collection);
 		expListView.setAdapter(expListAdapter);
 		expListView.setOnChildClickListener(new OnChildClickListener() {
-			
-			@Override
-			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
-					int childPosition, long id) {
 
-				   	int index = parent.getFlatListPosition(ExpandableListView.getPackedPositionForChild(groupPosition, childPosition));
-				
-				   	RodadaModel r = new RodadaModel();
-				   	
-					r = (RodadaModel) (parent.getItemAtPosition(index)); 
-					
-					showCustomDialog(r.getNumeroRodada(), r.getCampeonatoRodada().getCodCampeonato(), r.getCampeonatoRodada().getNomeCampeonato());
-				
+			@Override
+			public boolean onChildClick(ExpandableListView parent, View v,
+					int groupPosition, int childPosition, long id) {
+
+				int index = parent.getFlatListPosition(ExpandableListView
+						.getPackedPositionForChild(groupPosition, childPosition));
+
+				RodadaModel r = new RodadaModel();
+
+				r = (RodadaModel) (parent.getItemAtPosition(index));
+
+				showCustomDialog(r.getNumeroRodada(), r.getCampeonatoRodada()
+						.getCodCampeonato(), r.getCampeonatoRodada()
+						.getNomeCampeonato());
+
 				return true;
 			}
 		});
-		
+
 	}
 
 	private List<CampeonatoModel> createGroupList() {
@@ -110,11 +115,12 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 		collection = new LinkedHashMap<String, List<RodadaModel>>();
 
 		for (CampeonatoModel c : groupCampeonatoList) {
-			
+
 			childRodadaList = new ArrayList<RodadaModel>();
 
-			for(RodadaModel ro : rodadaList){
-				if(c.getCodCampeonato() == ro.getCampeonatoRodada().getCodCampeonato()){
+			for (RodadaModel ro : rodadaList) {
+				if (c.getCodCampeonato() == ro.getCampeonatoRodada()
+						.getCodCampeonato()) {
 					childRodadaList.add(ro);
 				}
 			}
@@ -124,47 +130,40 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 		return collection;
 
 	}
-	
 
 	private void showCustomDialog(int numeroRodada, int codCamp, String nomeCamp) {
 
-		final Dialog dialog = new Dialog(context);
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setTitle("Campeonato " + nomeCamp);
+		builder.setPositiveButton("OK", null);
 
-		dialog.setContentView(R.layout.layout_dialog_mostra_info);
-		
-		dialog.setTitle("Campeonato "+ nomeCamp);
-		
 		List<PartidaModel> partidaList = new ArrayList<PartidaModel>();
 		partidaList = PartidaController.getPartidas(context);
 
-		final Button ok = (Button) dialog.findViewById(R.dialog.btnOk);
-		final TextView time1 = (TextView) dialog.findViewById(R.dialog.time1);
-		final TextView time2 = (TextView) dialog.findViewById(R.dialog.time2);
-		final TextView nomeEstadio = (TextView) dialog
-				.findViewById(R.dialog.nomeEstadio);
-		final TextView nomeJuiz = (TextView) dialog
-				.findViewById(R.dialog.nomeJuiz);
+		List<PartidaModel> partidaListAdapter = new ArrayList<PartidaModel>();
 
 		for (PartidaModel p : partidaList) {
 
 			if (p.getRodadaPartida().getNumeroRodada() == numeroRodada
-					&& codCamp == p.getRodadaPartida().getCampeonatoRodada().getCodCampeonato()) {
+					&& codCamp == p.getRodadaPartida().getCampeonatoRodada()
+							.getCodCampeonato()) {
 
-				time1.setText(p.getTime1Partida().getNomeTime());
-				time2.setText(p.getTime2Partida().getNomeTime());
-				nomeEstadio.setText(p.getEstadioPartida().getNomeEstadio());
-				nomeJuiz.setText(p.getJuizPartida().getNomeJuiz());
+				partidaListAdapter.add(p);
+
 			}
 
 		}
+		
+		ListView list = new ListView(context);
+		PartidaListAdapter partidaAdapter = new PartidaListAdapter(context,
+				partidaListAdapter);
+		list.setAdapter(partidaAdapter);
 
-		ok.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				// ação do botão ok
-				dialog.dismiss();// encerra o dialog
-			}
-		});
-		dialog.show();// mostra o dialog
+		list.setBackgroundColor(Color.WHITE);
+		builder.setView(list);
+		Dialog dialog = builder.create();
 
+		dialog.show();
 	}
+
 }

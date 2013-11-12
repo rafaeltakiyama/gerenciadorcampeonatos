@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+dialog/time1"
+        android:id="@+itemPartida/time1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -12,62 +12,56 @@
         android:text="@string/time1txt" />
 
     <TextView
-        android:id="@+dialog/x"
+        android:id="@+itemPartida/x"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+dialog/time1"
+        android:layout_toRightOf="@+itemPartida/time1"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="@string/x" />
 
     <TextView
-        android:id="@+dialog/time2"
+        android:id="@+itemPartida/time2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+dialog/x"
+        android:layout_toRightOf="@+itemPartida/x"
         android:text="@string/time2txt" />
 
     <TextView
-        android:id="@+dialog/estadio"
+        android:id="@+itemPartida/estadio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+dialog/time1"
+        android:layout_below="@+itemPartida/time1"
         android:text="@string/estadio" />
 
     <TextView
-        android:id="@+dialog/juiz"
+        android:id="@+itemPartida/juiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+dialog/estadio"
+        android:layout_below="@+itemPartida/estadio"
         android:text="@string/juiz" />
 
     <TextView
-        android:id="@+dialog/nomeJuiz"
+        android:id="@+itemPartida/nomeEstadio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+dialog/btnOk"
-        android:layout_toRightOf="@+dialog/juiz"
-        android:paddingLeft="5dp"
-        android:text="@string/nomeJuiz" />
-
-    <TextView
-        android:id="@+dialog/nomeEstadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+dialog/nomeJuiz"
-        android:layout_toRightOf="@+dialog/estadio"
+        android:layout_above="@+itemPartida/juiz"
+        android:layout_toRightOf="@+itemPartida/estadio"
         android:paddingLeft="5dp"
         android:text="@string/nomeEstadio" />
 
-    <Button
-        android:id="@+dialog/btnOk"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+itemPartida/nomeJuiz"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+dialog/juiz"
-        android:text="@string/ok" />
+        android:layout_alignBaseline="@+itemPartida/juiz"
+        android:layout_alignBottom="@+itemPartida/juiz"
+        android:layout_toRightOf="@+itemPartida/juiz"
+        android:paddingLeft="5dp"
+        android:text="@string/nomeJuiz" />
 
 </RelativeLayout>
