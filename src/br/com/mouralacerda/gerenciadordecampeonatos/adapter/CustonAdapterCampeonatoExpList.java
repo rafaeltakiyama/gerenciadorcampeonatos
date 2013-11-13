@@ -22,13 +22,13 @@ import br.com.mouralacerda.gerenciadordecampeonatos.model.RodadaModel;
 
 import com.example.gerenciadordecampeonatos.R;
 
-public class CustonAdapterCompeonatoExpList extends BaseExpandableListAdapter {
+public class CustonAdapterCampeonatoExpList extends BaseExpandableListAdapter {
 
 	private Context context;
 	private List<CampeonatoModel> groupCampeonatoList;
 	private Map<String, List<RodadaModel>> collection;
 
-	public CustonAdapterCompeonatoExpList(Context context,
+	public CustonAdapterCampeonatoExpList(Context context,
 			List<CampeonatoModel> groupCampeonatoList,
 			Map<String, List<RodadaModel>> collection) {
 		this.context = context;

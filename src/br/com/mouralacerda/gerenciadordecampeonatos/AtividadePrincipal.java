@@ -26,8 +26,9 @@ public class AtividadePrincipal extends ListActivity {
 		"Jogadores",
 		"Juizes",
 		"Times",
-		"Gerenciar Campeonato",
+//		"Gerenciar Campeonato",
 		"Campeonatos Abertos",
+		"Jogador-Time-Campeonato",
 		"Sair" };
 	private Context context;
 	
@@ -77,13 +78,17 @@ public class AtividadePrincipal extends ListActivity {
 			startActivity(new Intent(this, AtividadeListaTime.class));
 			break;
 			
+//		case 5:
+//			startActivity(new Intent(this, AtividadeGerenciaCampeonato.class));
+//			break;
+			
 		case 5:
-			startActivity(new Intent(this, AtividadeGerenciaCampeonato.class));
+			startActivity(new Intent(this, AtividadeListaCampeonatoAberto.class));
 			break;
 			
 		case 6:
-			startActivity(new Intent(this, AtividadeListaCampeonatoAberto.class));
-			break;
+				startActivity(new Intent(this, AtividadeListaJogadorTimeCampeonato.class));
+				break;
 		default:
 			finish();
 		}

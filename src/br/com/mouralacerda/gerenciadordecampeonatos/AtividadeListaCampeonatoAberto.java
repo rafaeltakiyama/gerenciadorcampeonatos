@@ -20,7 +20,7 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import br.com.mouralacerda.gerenciadordecampeonatos.adapter.CustonAdapterCompeonatoExpList;
+import br.com.mouralacerda.gerenciadordecampeonatos.adapter.CustonAdapterCampeonatoExpList;
 import br.com.mouralacerda.gerenciadordecampeonatos.adapter.PartidaListAdapter;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.PartidaController;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.RodadaController;
@@ -54,7 +54,7 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 		createCollection();
 
 		expListView = (ExpandableListView) findViewById(R.campeonatoAbertoActivity.listaCampeonato);
-		CustonAdapterCompeonatoExpList expListAdapter = new CustonAdapterCompeonatoExpList(
+		CustonAdapterCampeonatoExpList expListAdapter = new CustonAdapterCampeonatoExpList(
 				context, groupCampeonatoList, collection);
 		expListView.setAdapter(expListAdapter);
 		expListView.setOnChildClickListener(new OnChildClickListener() {
