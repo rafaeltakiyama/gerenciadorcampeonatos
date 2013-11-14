@@ -64,7 +64,6 @@ public class CustonAdapterCampeonatoExpList extends BaseExpandableListAdapter {
 		TextView item = (TextView) convertView
 				.findViewById(R.itemChild.childRodada);
 
-		item.setTypeface(null, Typeface.NORMAL);
 		item.setText("Rodada " + childRodada.getNumeroRodada());
 		
 //		showCustomDialog(childRodada.getNumeroRodada(), 
