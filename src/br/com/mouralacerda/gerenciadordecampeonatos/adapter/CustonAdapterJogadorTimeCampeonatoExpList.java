@@ -20,6 +20,7 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 	private Context context;
 	private List<CampeonatoModel> groupCampeonatoList;
 	private Map<String, List<JogadorTimeCampeonatoModel>> collection;
+	private Typeface type;
 
 	public CustonAdapterJogadorTimeCampeonatoExpList(Context context,
 			List<CampeonatoModel> groupCampeonatoList,
@@ -28,6 +29,7 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 		this.context = context;
 		this.groupCampeonatoList = groupCampeonatoList;
 		this.collection = collection;
+		type = Typeface.createFromAsset(context.getAssets(),"fonts/abc3D.ttf");
 	}
 
 	@Override
@@ -58,6 +60,7 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 				.findViewById(R.itemChild.childRodada);
 
 		item.setText(childJogTimeCamp.getTime().getNomeTime());
+		item.setTypeface(type);
 		
 		return convertView;
 	}
@@ -100,6 +103,7 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 				.findViewById(R.groupCampeonato.groupName);
 		item.setTypeface(null, Typeface.BOLD);
 		item.setText(groupCampeonato);
+		item.setTypeface(type);
 		return convertView;
 	
 	}

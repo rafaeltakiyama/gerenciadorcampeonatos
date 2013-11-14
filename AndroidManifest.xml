@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadePrincipal"
+            android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadePrincipalIcon"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,6 @@
         <activity android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadeListaCampeonatoAberto"></activity>
         <activity android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadeListaJogadorTimeCampeonato"></activity>
         <activity android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadeListExpJogadorTimeCampeonato"></activity>
-        <activity android:name="br.com.mouralacerda.gerenciadordecampeonatos.AtividadePrincipalIcon"></activity>
         
     </application>
 

@@ -27,6 +27,7 @@ public class CustonAdapterCampeonatoExpList extends BaseExpandableListAdapter {
 	private Context context;
 	private List<CampeonatoModel> groupCampeonatoList;
 	private Map<String, List<RodadaModel>> collection;
+	private Typeface type;
 
 	public CustonAdapterCampeonatoExpList(Context context,
 			List<CampeonatoModel> groupCampeonatoList,
@@ -34,6 +35,7 @@ public class CustonAdapterCampeonatoExpList extends BaseExpandableListAdapter {
 		this.context = context;
 		this.groupCampeonatoList = groupCampeonatoList;
 		this.collection = collection;
+		type = Typeface.createFromAsset(context.getAssets(),"fonts/abc3D.ttf");
 	}
 	
 	@Override
@@ -65,6 +67,7 @@ public class CustonAdapterCampeonatoExpList extends BaseExpandableListAdapter {
 				.findViewById(R.itemChild.childRodada);
 
 		item.setText("Rodada " + childRodada.getNumeroRodada());
+		item.setTypeface(type);
 		
 //		showCustomDialog(childRodada.getNumeroRodada(), 
 //				childRodada.getCampeonatoRodada().getCodCampeonato());
@@ -108,8 +111,8 @@ public class CustonAdapterCampeonatoExpList extends BaseExpandableListAdapter {
 		}
 		TextView item = (TextView) convertView
 				.findViewById(R.groupCampeonato.groupName);
-		item.setTypeface(null, Typeface.BOLD);
 		item.setText(groupCampeonato);
+		item.setTypeface(type);
 		return convertView;
 
 	}
