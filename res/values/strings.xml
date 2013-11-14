@@ -17,5 +17,6 @@
     <string name="nomeJuiz">nome juiz</string>
     <string name="nomeEstadio">nome estádio</string>
     <string name="titulo">titulo</string>
+    <string name="Titulo">Título</string>
 
 </resources>
