@@ -18,5 +18,6 @@
     <string name="nomeEstadio">nome estádio</string>
     <string name="titulo">titulo</string>
     <string name="Titulo">Título</string>
+    <string name="jogador">Jogador</string>
 
 </resources>

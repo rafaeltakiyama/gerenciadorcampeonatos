@@ -3,6 +3,7 @@ package br.com.mouralacerda.gerenciadordecampeonatos.dao;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.content.Context;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.EstadioModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorModel;
@@ -11,8 +12,6 @@ import br.com.mouralacerda.gerenciadordecampeonatos.model.JuizModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.PartidaModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.RodadaModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.TimeModel;
-
-import android.content.Context;
 
 public class DaoFactory {
 

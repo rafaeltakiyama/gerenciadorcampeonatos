@@ -1,23 +1,16 @@
 package br.com.mouralacerda.gerenciadordecampeonatos.adapter;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface.OnClickListener;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import br.com.mouralacerda.gerenciadordecampeonatos.controller.PartidaController;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
-import br.com.mouralacerda.gerenciadordecampeonatos.model.PartidaModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.RodadaModel;
 
 import com.example.gerenciadordecampeonatos.R;
@@ -69,8 +62,6 @@ public class CustonAdapterCampeonatoExpList extends BaseExpandableListAdapter {
 		item.setText("Rodada " + childRodada.getNumeroRodada());
 		item.setTypeface(type);
 		
-//		showCustomDialog(childRodada.getNumeroRodada(), 
-//				childRodada.getCampeonatoRodada().getCodCampeonato());
 		return convertView;
 	}
 

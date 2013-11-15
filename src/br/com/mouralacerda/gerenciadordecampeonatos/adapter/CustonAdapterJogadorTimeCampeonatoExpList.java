@@ -3,10 +3,6 @@ package br.com.mouralacerda.gerenciadordecampeonatos.adapter;
 import java.util.List;
 import java.util.Map;
 
-import com.example.gerenciadordecampeonatos.R;
-
-import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
-import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorTimeCampeonatoModel;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -14,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorTimeCampeonatoModel;
+
+import com.example.gerenciadordecampeonatos.R;
 
 public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableListAdapter {
 
@@ -111,13 +111,13 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 	@Override
 	public boolean hasStableIds() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isChildSelectable(int groupPosition, int childPosition) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	
 }

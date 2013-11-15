@@ -7,6 +7,7 @@
         <item>Times</item>
         <item>Estádios</item>
         <item>Juizes</item>
+        <item>Campeonatos</item>
         <item>Sair</item>
     </string-array>
     <array name="itens_ico">
@@ -16,6 +17,7 @@
         <item>@drawable/ico_chuteira</item>
         <item>@drawable/ico_campo</item>
         <item>@drawable/ico_apito</item>
+        <item>@drawable/ico_campeonatos</item>
         <item>@drawable/ico_exit</item>
     </array>
 </resources>

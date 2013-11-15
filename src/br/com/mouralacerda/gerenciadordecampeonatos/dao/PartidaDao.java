@@ -3,7 +3,6 @@ package br.com.mouralacerda.gerenciadordecampeonatos.dao;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.EstadioModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JuizModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.PartidaModel;

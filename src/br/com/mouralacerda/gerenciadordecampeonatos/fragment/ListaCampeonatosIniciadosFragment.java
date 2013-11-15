@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import br.com.mouralacerda.gerenciadordecampeonatos.controller.CampeonatoController;
-import br.com.mouralacerda.gerenciadordecampeonatos.controller.RodadaController;
-import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
-import br.com.mouralacerda.gerenciadordecampeonatos.model.RodadaModel;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import br.com.mouralacerda.gerenciadordecampeonatos.controller.RodadaController;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.RodadaModel;
 
 public class ListaCampeonatosIniciadosFragment extends ListFragment{
 

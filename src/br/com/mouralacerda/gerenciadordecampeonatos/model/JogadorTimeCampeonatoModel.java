@@ -3,7 +3,6 @@ package br.com.mouralacerda.gerenciadordecampeonatos.model;
 import java.io.Serializable;
 
 import android.text.Html;
-import android.text.Spanned;
 
 public class JogadorTimeCampeonatoModel implements Serializable {
 

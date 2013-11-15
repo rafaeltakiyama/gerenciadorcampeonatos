@@ -14,6 +14,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
@@ -54,6 +55,19 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 		expListView = (ExpandableListView) findViewById(R.campeonatoAbertoActivity.listaCampeonato);
 		CustonAdapterCampeonatoExpList expListAdapter = new CustonAdapterCampeonatoExpList(
 				context, groupCampeonatoList, collection);
+		
+		DisplayMetrics metrics = new DisplayMetrics();
+		
+		getWindowManager().getDefaultDisplay().getMetrics(metrics);
+		int width = metrics.widthPixels;
+		
+		expListView = (ExpandableListView) findViewById(R.campeonatoAbertoActivity.listaCampeonato);
+		
+		expListView.setIndicatorBounds(width - GetDipsFromPixel(50),
+				width - GetDipsFromPixel(5));
+		expListView.setGroupIndicator(getResources().getDrawable(
+				R.drawable.group_indicator));
+		
 		expListView.setAdapter(expListAdapter);
 		expListView.setOnChildClickListener(new OnChildClickListener() {
 
@@ -76,6 +90,14 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 			}
 		});
 
+	}
+	
+	// Convert pixel to dip
+	public int GetDipsFromPixel(float pixels) {
+		// Get the screen's density scale
+		final float scale = getResources().getDisplayMetrics().density;
+		// Convert the dps to pixels, based on density scale
+		return (int) (pixels * scale + 0.5f);
 	}
 
 	private List<CampeonatoModel> createGroupList() {
