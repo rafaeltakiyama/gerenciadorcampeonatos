@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ListView;
 import br.com.mouralacerda.gerenciadordecampeonatos.adapter.CustonAdapterJogadorTimeCampeonatoExpList;
@@ -26,14 +27,17 @@ import br.com.mouralacerda.gerenciadordecampeonatos.controller.JogadorTimeCampeo
 import br.com.mouralacerda.gerenciadordecampeonatos.model.CampeonatoModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorModel;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.JogadorTimeCampeonatoModel;
+import br.com.mouralacerda.gerenciadordecampeonatos.model.TimeModel;
 
 import com.example.gerenciadordecampeonatos.R;
+import com.example.gerenciadordecampeonatos.R.groupCampeonato;
 
 public class AtividadeListExpJogadorTimeCampeonato extends Activity {
 
 	private List<CampeonatoModel> groupCampeonatoList;
 	private List<JogadorTimeCampeonatoModel> childJogTimeCampList;
-	private Map<String, List<JogadorTimeCampeonatoModel>> collection;
+//	private Map<String, List<JogadorTimeCampeonatoModel>> collection;
+	HashMap<String, List<String>> collection;
 	private ExpandableListView expListView;
 
 	private Context context;
@@ -47,6 +51,8 @@ public class AtividadeListExpJogadorTimeCampeonato extends Activity {
 		setContentView(R.layout.layout_atividade_exp_lista_campeonato_aberto);
 
 		context = this;
+		
+		Toast.makeText(context, "Selecione o time para visualizar os jogadores!", Toast.LENGTH_LONG).show();
 
 		jogTimCampList = new ArrayList<JogadorTimeCampeonatoModel>();
 		jogTimCampList = JogadorTimeCampeonatoController
@@ -68,7 +74,7 @@ public class AtividadeListExpJogadorTimeCampeonato extends Activity {
 		expListView.setGroupIndicator(getResources().getDrawable(
 				R.drawable.group_indicator));
 
-		CustonAdapterJogadorTimeCampeonatoExpList expListAdapter = new CustonAdapterJogadorTimeCampeonatoExpList(
+		final CustonAdapterJogadorTimeCampeonatoExpList expListAdapter = new CustonAdapterJogadorTimeCampeonatoExpList(
 				context, groupCampeonatoList, collection);
 
 		expListView.setAdapter(expListAdapter);
@@ -82,33 +88,33 @@ public class AtividadeListExpJogadorTimeCampeonato extends Activity {
 				int index = parent.getFlatListPosition(ExpandableListView
 						.getPackedPositionForChild(groupPosition, childPosition));
 
-				JogadorTimeCampeonatoModel jtc = new JogadorTimeCampeonatoModel();
-
-				jtc = (JogadorTimeCampeonatoModel) (parent
-						.getItemAtPosition(index));
-
-				showCustomDialog(jtc);
+				String time = (String) (parent.getItemAtPosition(index));
+				
+				String camp = (String) expListAdapter.getGroup(groupPosition);
+				
+				showCustomDialog(time, camp);
 
 				return true;
 			}
 		});
 	}
 
-	private void showCustomDialog(JogadorTimeCampeonatoModel jtc) {
+	private void showCustomDialog(String time, String camp) {
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		builder.setTitle(jtc.getTime().getNomeTime());
+		builder.setTitle(camp);
 		builder.setPositiveButton("OK", null);
 
-		List<JogadorModel> jogadorList = new ArrayList<JogadorModel>();
-		jogadorList = JogadorController.getJogador(context);
+		List<JogadorTimeCampeonatoModel> jtcList = new ArrayList<JogadorTimeCampeonatoModel>();
+		jtcList = JogadorTimeCampeonatoController.getJogadorTimeCampeonato(context);
 
 		List<JogadorModel> jogadorListAdapter = new ArrayList<JogadorModel>();
 
-		for (JogadorModel t : jogadorList) {
+		for (JogadorTimeCampeonatoModel jtc : jtcList) {
 
-			if (t.getCodJogador() == jtc.getJogador().getCodJogador()) {
-				jogadorListAdapter.add(t);
+			if (jtc.getCampeonato().getNomeCampeonato().equals(camp) 
+					&& jtc.getTime().getNomeTime().equals(time)) {
+				jogadorListAdapter.add(jtc.getJogador());
 			}
 
 		}
@@ -157,21 +163,52 @@ public class AtividadeListExpJogadorTimeCampeonato extends Activity {
 
 	}
 
-	private Map<String, List<JogadorTimeCampeonatoModel>> createCollection() {
-
-		collection = new LinkedHashMap<String, List<JogadorTimeCampeonatoModel>>();
-
+	private Map<String, List<String>> createCollection() {
+		
+		
+		collection = new HashMap<String, List<String>>();
+		HashMap<String, Integer> child ;
+		
+		
 		for (CampeonatoModel c : groupCampeonatoList) {
-
-			childJogTimeCampList = new ArrayList<JogadorTimeCampeonatoModel>();
-
-			for (JogadorTimeCampeonatoModel r : jogTimCampList) {
-				if (c.getCodCampeonato() == r.getCampeonato().getCodCampeonato()) {
-					childJogTimeCampList.add(r);
+			child = new HashMap<String, Integer>();
+			
+			for (JogadorTimeCampeonatoModel jtc : jogTimCampList) {
+				if (c.getCodCampeonato() == jtc.getCampeonato().getCodCampeonato()) {
+					
+					child.put(jtc.getTime().getNomeTime(), jtc.getCampeonato().getCodCampeonato());
 				}
+				
+				List<String> childList = new ArrayList<String>();
+				
+				Iterator i = child.keySet().iterator();
+				while(i.hasNext()){
+					childList.add(String.valueOf(i.next()));
+				}
+				
+				
+				collection.put(c.getNomeCampeonato(), childList);
 			}
-			collection.put(c.getNomeCampeonato(), childJogTimeCampList);
+			
 		}
+				
+		
+		
+		
+
+//		collection = new LinkedHashMap<String, List<JogadorTimeCampeonatoModel>>();
+//
+//		for (CampeonatoModel c : groupCampeonatoList) {
+//
+//			childJogTimeCampList = new ArrayList<JogadorTimeCampeonatoModel>();
+//
+//			for (JogadorTimeCampeonatoModel jtc : jogTimCampList) {
+//				if (c.getCodCampeonato() == jtc.getCampeonato().getCodCampeonato()) {
+//						childJogTimeCampList.add(jtc);
+//				}
+//			}
+//			collection.put(c.getNomeCampeonato(), childJogTimeCampList);
+//		}
 		return collection;
 	}
 

@@ -1,14 +1,18 @@
 package br.com.mouralacerda.gerenciadordecampeonatos;
 
+import java.io.IOException;
+
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import br.com.mouralacerda.gerenciadordecampeonatos.adapter.MenuPrincipalAdapter;
+import br.com.mouralacerda.gerenciadordecampeonatos.banco.DataBaseCopy;
 import br.com.mouralacerda.gerenciadordecampeonatos.dao.DaoFactory;
 
 import com.example.gerenciadordecampeonatos.R;
@@ -22,7 +26,32 @@ public class AtividadePrincipalIcon extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		context = this;
-
+//---------------------------------------
+		 DataBaseCopy myDbHelper = new DataBaseCopy(context);
+	        myDbHelper = new DataBaseCopy(this);
+	 
+	        try {
+	 
+	        	myDbHelper.createDataBase();
+	 
+	 	} catch (IOException ioe) {
+	 
+	 		throw new Error("Unable to create database");
+	 
+	 	}
+	 
+	 	try {
+	 
+	 		myDbHelper.openDataBase();
+	 
+	 	}catch(SQLException sqle){
+	 
+	 		throw sqle;
+	 
+	 	}finally{
+	 		myDbHelper.close();
+	 	}
+//---------------------------------------
 		DaoFactory.init(context);
 		
 		Resources res = context.getResources();

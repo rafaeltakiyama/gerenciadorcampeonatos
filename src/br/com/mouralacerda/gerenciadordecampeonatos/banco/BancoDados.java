@@ -42,6 +42,7 @@ class BancoDados extends SQLiteOpenHelper{ //nao é publica... so quem esta no me
 		} catch (Exception e) {
 			Log.e("AGENDA", "Erro criado banco de dados", e);
 		}
+		
 	}
 
 	@Override

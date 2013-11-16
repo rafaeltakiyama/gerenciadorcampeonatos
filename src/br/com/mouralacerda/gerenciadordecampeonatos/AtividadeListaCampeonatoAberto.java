@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ListView;
 import br.com.mouralacerda.gerenciadordecampeonatos.adapter.CustonAdapterCampeonatoExpList;
@@ -47,6 +48,8 @@ public class AtividadeListaCampeonatoAberto extends Activity {
 		setContentView(R.layout.layout_atividade_exp_lista_campeonato_aberto);
 
 		context = this;
+		
+		Toast.makeText(context, "Selecione a rodada para visualizar as partidas!", Toast.LENGTH_LONG).show();
 
 		createGroupList();
 

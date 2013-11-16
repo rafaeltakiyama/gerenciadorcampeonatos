@@ -1,5 +1,6 @@
 package br.com.mouralacerda.gerenciadordecampeonatos.adapter;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,12 +20,12 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 
 	private Context context;
 	private List<CampeonatoModel> groupCampeonatoList;
-	private Map<String, List<JogadorTimeCampeonatoModel>> collection;
+	private Map<String,List<String>> collection;
 	private Typeface type;
 
 	public CustonAdapterJogadorTimeCampeonatoExpList(Context context,
 			List<CampeonatoModel> groupCampeonatoList,
-			Map<String, List<JogadorTimeCampeonatoModel>> collection) {
+			HashMap<String,List<String>> collection) {
 		
 		this.context = context;
 		this.groupCampeonatoList = groupCampeonatoList;
@@ -33,7 +34,7 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 	}
 
 	@Override
-	public JogadorTimeCampeonatoModel getChild(int groupPosition, int childPosition) {
+	public String getChild(int groupPosition, int childPosition) {
 		return collection.get(groupCampeonatoList.get(groupPosition).getNomeCampeonato()).get(childPosition);
 	}
 
@@ -46,7 +47,7 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 	public View getChildView(int groupPosition, int childPosition,
 			boolean isLastChild, View convertView, ViewGroup parent) {
 
-		final JogadorTimeCampeonatoModel childJogTimeCamp = getChild(groupPosition, childPosition);
+		final String childJogTimeCamp = getChild(groupPosition, childPosition);
 		
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -59,7 +60,7 @@ public class CustonAdapterJogadorTimeCampeonatoExpList extends BaseExpandableLis
 		TextView item = (TextView) convertView
 				.findViewById(R.itemChild.childRodada);
 
-		item.setText(childJogTimeCamp.getTime().getNomeTime());
+		item.setText(childJogTimeCamp);
 		item.setTypeface(type);
 		
 		return convertView;
