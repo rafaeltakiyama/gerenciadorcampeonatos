@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Window;
 import br.com.mouralacerda.gerenciadordecampeonatos.adapter.AdapterList;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.EstadioController;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.EstadioModel;
@@ -19,8 +20,9 @@ public class AtividadeListaEstadios extends ListActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		
 		context = this;
+		
 
 		List<EstadioModel> listaEstadio = new ArrayList<EstadioModel>();
 
