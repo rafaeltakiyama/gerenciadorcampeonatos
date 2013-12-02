@@ -27,7 +27,7 @@ public class EstadioModel implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Estádio: " + getNomeEstadio();
+		return getNomeEstadio();
 	}
 
 }

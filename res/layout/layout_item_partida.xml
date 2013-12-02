@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+itemPartida/time1"
+        style="@style/textBold20sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/time1txt" />
+
+    <TextView
+        android:id="@+itemPartida/x"
+        style="@style/textBold20sp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+itemPartida/time1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/x" />
+
+    <TextView
+        android:id="@+itemPartida/time2"
+        style="@style/textBold20sp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+itemPartida/x"
+        android:text="@string/time2txt" />
+
+    <TextView
+        android:id="@+itemPartida/estadio"
+        style="@style/textBold15sp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+itemPartida/time1"
+        android:text="@string/estadio" />
+
+    <TextView
+        android:id="@+itemPartida/juiz"
+        style="@style/textBold15sp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+itemPartida/estadio"
+        android:text="@string/juiz" />
+
+    <TextView
+        android:id="@+itemPartida/nomeEstadio"
+        style="@style/tex15sp"
+        android:layout_above="@+itemPartida/juiz"
+        android:layout_toRightOf="@+itemPartida/estadio"
+        android:paddingLeft="5dp"
+        android:text="@string/nomeEstadio" />
+
+    <TextView
+        android:id="@+itemPartida/nomeJuiz"
+        style="@style/tex15sp"
+
+        android:layout_alignBaseline="@+itemPartida/juiz"
+        android:layout_alignBottom="@+itemPartida/juiz"
+        android:layout_toRightOf="@+itemPartida/juiz"
+        android:paddingLeft="5dp"
+        android:text="@string/nomeJuiz" />
+
+</RelativeLayout>

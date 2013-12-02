@@ -17,7 +17,7 @@ public class CampeonatoDao extends Dao<CampeonatoModel>{
 	}
 
 	@Override
-	protected String whereClause(CampeonatoModel element) {
+	protected String whereClause() {
 		return "codCampeonato = ?";
 	}
 

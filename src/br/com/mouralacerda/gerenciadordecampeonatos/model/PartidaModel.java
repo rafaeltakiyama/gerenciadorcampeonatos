@@ -6,28 +6,13 @@ public class PartidaModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private int codCampenato;
-	private int codRodada;
 	private int codPartida;
-	private int codJuiz;
-	private int codEstadio;
-	private int codTime;
-
-	public int getCodCampenato() {
-		return codCampenato;
-	}
-
-	public void setCodCampenato(int codCampenato) {
-		this.codCampenato = codCampenato;
-	}
-
-	public int getCodRodada() {
-		return codRodada;
-	}
-
-	public void setCodRodada(int codRodada) {
-		this.codRodada = codRodada;
-	}
+	private CampeonatoModel campeonatoPartida;
+	private RodadaModel rodadaPartida;
+	private JuizModel juizPartida;
+	private EstadioModel estadioPartida;
+	private TimeModel time1Partida;
+	private TimeModel time2Partida;
 
 	public int getCodPartida() {
 		return codPartida;
@@ -37,28 +22,52 @@ public class PartidaModel implements Serializable {
 		this.codPartida = codPartida;
 	}
 
-	public int getCodJuiz() {
-		return codJuiz;
+	public CampeonatoModel getCampeonatoPartida() {
+		return campeonatoPartida;
 	}
 
-	public void setCodJuiz(int codJuiz) {
-		this.codJuiz = codJuiz;
+	public void setCampeonatoPartida(CampeonatoModel campeonatoPartida) {
+		this.campeonatoPartida = campeonatoPartida;
 	}
 
-	public int getCodEstadio() {
-		return codEstadio;
+	public RodadaModel getRodadaPartida() {
+		return rodadaPartida;
 	}
 
-	public void setCodEstadio(int codEstadio) {
-		this.codEstadio = codEstadio;
+	public void setRodadaPartida(RodadaModel rodadaPartida) {
+		this.rodadaPartida = rodadaPartida;
 	}
 
-	public int getCodTime() {
-		return codTime;
+	public JuizModel getJuizPartida() {
+		return juizPartida;
 	}
 
-	public void setCodTime(int codTime) {
-		this.codTime = codTime;
+	public void setJuizPartida(JuizModel juizPartida) {
+		this.juizPartida = juizPartida;
+	}
+
+	public EstadioModel getEstadioPartida() {
+		return estadioPartida;
+	}
+
+	public void setEstadioPartida(EstadioModel estadioPartida) {
+		this.estadioPartida = estadioPartida;
+	}
+
+	public TimeModel getTime1Partida() {
+		return time1Partida;
+	}
+
+	public void setTime1Partida(TimeModel time1Partida) {
+		this.time1Partida = time1Partida;
+	}
+
+	public TimeModel getTime2Partida() {
+		return time2Partida;
+	}
+
+	public void setTime2Partida(TimeModel time2Partida) {
+		this.time2Partida = time2Partida;
 	}
 
 }

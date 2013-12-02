@@ -2,36 +2,54 @@ package br.com.mouralacerda.gerenciadordecampeonatos.model;
 
 import java.io.Serializable;
 
+import android.text.Html;
+
 public class JogadorTimeCampeonatoModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	private int codJogadorTimeCampeonato;
+	private CampeonatoModel campeonato;
+	private TimeModel times;
+	private JogadorModel jogador;
+
+	public int getCodJogadorTimeCampeonato() {
+		return codJogadorTimeCampeonato;
+	}
+
+	public void setCodJogadorTimeCampeonato(int codJogadorTimeCampeonato) {
+		this.codJogadorTimeCampeonato = codJogadorTimeCampeonato;
+	}
+
+	public CampeonatoModel getCampeonato() {
+		return campeonato;
+	}
+
+	public void setCampeonato(CampeonatoModel campeonato) {
+		this.campeonato = campeonato;
+	}
+
+	public TimeModel getTime() {
+		return times;
+	}
+
+	public void setTime(TimeModel time) {
+		this.times = time;
+	}
+
+	public JogadorModel getJogador() {
+		return jogador;
+	}
+
+	public void setJogador(JogadorModel jogador) {
+		this.jogador = jogador;
+	}
 	
-	private int codCampenato;
-	private int codTime;
-	private int codJogador;
-
-	public int getCodCampenato() {
-		return codCampenato;
-	}
-
-	public void setCodCampenato(int codCampenato) {
-		this.codCampenato = codCampenato;
-	}
-
-	public int getCodTime() {
-		return codTime;
-	}
-
-	public void setCodTime(int codTime) {
-		this.codTime = codTime;
-	}
-
-	public int getCodJogador() {
-		return codJogador;
-	}
-
-	public void setCodJogador(int codJogador) {
-		this.codJogador = codJogador;
+	@Override
+	public String toString() {
+		return Html.fromHtml("<b>Campeonato: " + getCampeonato().getNomeCampeonato()+"</b><br/>" +
+				"<b>Time: " + getTime().getNomeTime() + "</b><br/>" +
+				"<b>Jogador: " + getJogador().getNomeJogador() + "</b><br/>").toString();
 	}
 
 }

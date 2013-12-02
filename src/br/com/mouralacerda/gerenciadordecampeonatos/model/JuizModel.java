@@ -27,7 +27,7 @@ public class JuizModel implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Nome: \n"+ getNomeJuiz();
+		return getNomeJuiz();
 	}
 
 }

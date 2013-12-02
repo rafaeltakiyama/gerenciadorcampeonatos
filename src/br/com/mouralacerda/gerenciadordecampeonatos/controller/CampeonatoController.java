@@ -22,4 +22,17 @@ public class CampeonatoController {
 		return campenatoList;
 	}
 	
+	public static List<CampeonatoModel> getCampeonatoPorCodigo(Context context, int codCampeonato) {
+		
+		String sql = "select * from tbcampeonato where codCampeonato = ?";
+		
+		List<CampeonatoModel> campeonatoList = new ArrayList<CampeonatoModel>();
+		
+		BancoHelper.instance().open(context);
+		campeonatoList = DaoFactory.get(CampeonatoModel.class).selectAllImpl(sql, String.valueOf(codCampeonato));
+		BancoHelper.instance().close();
+		
+		return campeonatoList;
+	}
+	
 }

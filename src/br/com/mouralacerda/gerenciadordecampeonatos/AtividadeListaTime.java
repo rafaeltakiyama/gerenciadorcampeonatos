@@ -3,17 +3,16 @@ package br.com.mouralacerda.gerenciadordecampeonatos;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import br.com.mouralacerda.gerenciadordecampeonatos.adapter.AdapterList;
 import br.com.mouralacerda.gerenciadordecampeonatos.controller.TimeController;
 import br.com.mouralacerda.gerenciadordecampeonatos.model.TimeModel;
 
 import com.example.gerenciadordecampeonatos.R;
 
-public class AtividadeListaTime extends Activity{
+public class AtividadeListaTime extends ListActivity{
 
 	private Context context;
 	
@@ -21,22 +20,19 @@ public class AtividadeListaTime extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.layout_atividade_lista_time);
-
 		context = this;
-
-		ListView listViewTime = (ListView) findViewById(R.timeActivity.listaTime);
 
 		List<TimeModel> listaTime = new ArrayList<TimeModel>();
 
 		listaTime = TimeController.getTime(context);
 
-		ArrayAdapter<TimeModel> adapter = new ArrayAdapter<TimeModel>(context,
-				android.R.layout.simple_list_item_1, android.R.id.text1,
-				listaTime);
+		ArrayList<String> stringArray = new ArrayList<String>();
 		
-		listViewTime.setAdapter(adapter);
+		for (TimeModel t : listaTime) {
+			stringArray.add(t.getNomeTime());
+		}
 		
+		setListAdapter(new AdapterList(context, R.layout.layout_item_lista, stringArray));
 	}
 	
 }

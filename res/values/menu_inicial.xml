@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="itens_menu">
+        <item>Campeonatos Abertos</item>
+        <item>Jogador-Time-Campeonato</item>
+        <item>Jogadores</item>
+        <item>Times</item>
+        <item>Estádios</item>
+        <item>Juizes</item>
+        <item>Campeonatos</item>
+        <item>Sair</item>
+    </string-array>
+    <array name="itens_ico">
+        <item>@drawable/ico_campeonato</item>
+        <item>@drawable/ico_jogador_bola</item>
+        <item>@drawable/ico_jogador</item>
+        <item>@drawable/ico_chuteira</item>
+        <item>@drawable/ico_campo</item>
+        <item>@drawable/ico_apito</item>
+        <item>@drawable/ico_campeonatos</item>
+        <item>@drawable/ico_exit</item>
+    </array>
+</resources>
